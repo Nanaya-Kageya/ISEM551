@@ -41,6 +41,13 @@ namespace assignment.Controllers
             return View();
         }
 
+        public IActionResult SaveInfo()
+        {
+            //ViewData["TaskMessage"] = "Manage Tasks in this page.";
+            Console.WriteLine("This is a test");
+            return View();
+        }
+
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {

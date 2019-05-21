@@ -112,7 +112,64 @@
         </ul>
 
         <div id="iteration1" class="panel active">
-            <table style="width:100%">
+
+            @*<form name="formIteration1" method="post" action="page.aspx" id="formIteration1">*@
+            <form name="formIteration1" method="post" asp-controller="Home" asp-action="SaveInfo">
+                <table style="width:100%">
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Task</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Fanglin"></td>
+                        <td><input type="text" name="lastname" value="Wang"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Xiyuan"></td>
+                        <td><input type="text" name="lastname" value="Yin"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Submit">
+                @*<asp:Button id="button1" Text="Click me!" runat="server" OnClick="submit" />*@
+                <br><br>
+            </form>
+
+            @*<table style="width:100%">
                 <tr>
                     <th>Name</th>
                     <th>Task</th>
@@ -128,11 +185,66 @@
                     <td>Research</td>
                     <td>Accepted</td>
                 </tr>
-            </table>
+            </table>*@
         </div>
 
         <div id="Iteration2" class="panel">
-            <table style="width:100%">
+
+            <form action="/">
+                <table style="width:100%">
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Task</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Fanglin"></td>
+                        <td><input type="text" name="lastname" value="Wang"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Xiyuan"></td>
+                        <td><input type="text" name="lastname" value="Yin"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Submit">
+                <br><br>
+            </form>
+
+            @*<table style="width:100%">
                 <tr>
                     <th>Name</th>
                     <th>Task</th>
@@ -148,11 +260,66 @@
                     <td>Assignment 1</td>
                     <td>Accepted</td>
                 </tr>
-            </table>
+            </table>*@
         </div>
 
         <div id="Iteration3" class="panel">
-            <table style="width:100%">
+
+            <form action="/">
+                <table style="width:100%">
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Task</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Fanglin"></td>
+                        <td><input type="text" name="lastname" value="Wang"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Xiyuan"></td>
+                        <td><input type="text" name="lastname" value="Yin"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Submit">
+                <br><br>
+            </form>
+
+            @*<table style="width:100%">
                 <tr>
                     <th>Name</th>
                     <th>Task</th>
@@ -168,11 +335,66 @@
                     <td>Assignment 2</td>
                     <td>Completed</td>
                 </tr>
-            </table>
+            </table>*@
         </div>
 
         <div id="Iteration4" class="panel">
-            <table style="width:100%">
+
+            <form action="/">
+                <table style="width:100%">
+                    <tr>
+                        <th>First name</th>
+                        <th>Last name</th>
+                        <th>Task</th>
+                        <th>Status</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Fanglin"></td>
+                        <td><input type="text" name="lastname" value="Wang"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="firstname" value="Xiyuan"></td>
+                        <td><input type="text" name="lastname" value="Yin"></td>
+                        <td>
+                            <select name="task">
+                                <option value="research" selected>Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status">
+                                <option value="defined" selected>Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Submit">
+                <br><br>
+            </form>
+
+            @*<table style="width:100%">
                 <tr>
                     <th>Name</th>
                     <th>Task</th>
@@ -188,7 +410,7 @@
                     <td>Assignment 3</td>
                     <td>In Progress</td>
                 </tr>
-            </table>
+            </table>*@
         </div>
     </div>
 
