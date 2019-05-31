@@ -89,7 +89,8 @@
 
 
 
-    <script>$(document).ready(function () {
+    <script>
+        $(document).ready(function () {
             $(".tab-panels .tabs li").on("click", function () {
 
                 //figure out which panel to show
@@ -113,253 +114,58 @@
                 }
             });
 
-        });</script>
+        });
+
+        @*function submitTasks() {
+            $(".Submit").click(function () {
+
+                var iteration1 = $("#Iteration1");
+                var firstname1 = $("#firstname1");
+                var lastname1 = $("lastname1");
+                var task1 = $("task1");
+                var status1 = $(status1");
+
+                var iteration2 = $("#Iteration2");
+                var firstname2 = $("#firstname2");
+                var lastname2 = $("lastname2");
+                var task2 = $("task2");
+                var status2 = $(status2");
+
+
+
+
+
+                $.ajax({
+                    type: "POST",
+                    contexType: "application/json",
+                    url: "Home/AddTasks",
+                    data:
+                    "{{     'iteration':'" + iteration1.value +
+                        "','firstname':'" + firstname1.value +
+                        "','lastname':'" + lastname1.value +
+                        "','task':'" + task.value +
+                        "','status':'" + status1.value + "'},
+                      {     'iteration':'" + iteration2.value +
+                        "','firstname':'" + firstname2.value +
+                        "','lastname':'" + lastname2.value + +
+                        "','task':'" + task2.value +
+                        "','status':'" + status2.value + "'}
+                    }",
+                    dataType: "json",
+                    success: function (data) {
+                        if (data.success) {
+                            alert("Update Successfully!");
+                            dataTable.ajax.reload();
+                        }
+                    }
+                });
+            })
+
+        }*@
+        </script>
 
 </head>
 <body>
-    @*<div class="tab-panels">
-            <ul class="tabs">
-                <li rel="iteration1" class="active">iteration1</li>
-                <li rel="Iteration2">Iteration2</li>
-                <li rel="Iteration3">Iteration3</li>
-                <li rel="Iteration4">Iteration4</li>
-            </ul>
-
-            <div id="iteration1" class="panel active">
-
-                <form name="formIteration1" method="post" asp-controller="Home" asp-action="SaveInfo">
-                    <table style="width:100%">
-                        <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Task</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Fanglin"></td>
-                            <td><input type="text" name="lastname" value="Wang"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Xiyuan"></td>
-                                <td><input type="text" name="lastname" value="Yin"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <input type="submit" value="Submit">
-                    <br><br>
-                </form>
-            </div>
-
-            <div id="Iteration2" class="panel">
-
-                <form action="/">
-                    <table style="width:100%">
-                        <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Task</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Fanglin"></td>
-                            <td><input type="text" name="lastname" value="Wang"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Xiyuan"></td>
-                            <td><input type="text" name="lastname" value="Yin"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <input type="submit" value="Submit">
-                    <br><br>
-                </form>
-
-            </div>
-
-            <div id="Iteration3" class="panel">
-
-                <form action="/">
-                    <table style="width:100%">
-                        <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Task</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Fanglin"></td>
-                            <td><input type="text" name="lastname" value="Wang"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Xiyuan"></td>
-                            <td><input type="text" name="lastname" value="Yin"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <input type="submit" value="Submit">
-                    <br><br>
-                </form>
-
-            </div>
-
-            <div id="Iteration4" class="panel">
-
-                <form action="/">
-                    <table style="width:100%">
-                        <tr>
-                            <th>First name</th>
-                            <th>Last name</th>
-                            <th>Task</th>
-                            <th>Status</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Fanglin"></td>
-                            <td><input type="text" name="lastname" value="Wang"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="firstname" value="Xiyuan"></td>
-                            <td><input type="text" name="lastname" value="Yin"></td>
-                            <td>
-                                <select name="task">
-                                    <option value="research" selected>Research</option>
-                                    <option value="assignment1">Assignment 1</option>
-                                    <option value="assignment2">Assignment 2</option>
-                                    <option value="assignment3">Assignment 3</option>
-                                </select>
-                            </td>
-                            <td>
-                                <select name="status">
-                                    <option value="defined" selected>Defined</option>
-                                    <option value="inProgress">In Progress</option>
-                                    <option value="completed">Completed</option>
-                                    <option value="accepted">Accepted</option>
-                                </select>
-                            </td>
-                        </tr>
-                    </table>
-                    <br>
-                    <input type="submit" value="Submit">
-                    <br><br>
-                </form>
-
-            </div>
-        </div>*@
-
-
-
-
 
 
     <div class="tab-panels">
@@ -375,9 +181,9 @@
             }*@
         </ul>
 
-        <div id="Iteration1" class="panel active">
+        <div id="Iteration1" value="Iteration1" class="panel active">
 
-            <form name="form @task1.iteration" method="post" asp-controller="Home" asp-action="SaveInfo">
+            <form name="@task1.iteration" method="post" asp-controller="Home" asp-action="AddTasks">
                 <table style="width:100%">
 
                     <tr>
@@ -387,21 +193,21 @@
                         <th>@Html.DisplayNameFor(model => model.status)</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="firstname" value="@task1.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task1.lastName"></td>
+                        <td><input type="text" id="firstname1" name="firstname1" value="@task1.firstName"></td>
+                        <td><input type="text" id="lastname1" name="lastname1" value="@task1.lastName"></td>
                         <td>
-                            @task1.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
+                            <select name="task1" id="task1">
+                                <option name="presentTask" selected>@task1.task</option>
+                                <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
                                 <option value="assignment2">Assignment 2</option>
-                                <option value="assignment3">Assignment 3 </option>
+                                <option value="assignment3">Assignment 3</option>
                             </select>
                         </td>
                         <td>
-                            @task1.status
-                            <select name="status">
-                                <option value="Defined" selected>Defineds</option>
+                            <select name="status1" id="status1">
+                                <option name="presentStatus" selected>@task1.status</option>
+                                <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>
                                 <option value="completed">Completed</option>
                                 <option value="accepted">Accepted</option>
@@ -409,21 +215,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="firstname" value="@task2.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task2.lastName"></td>
+                        <td><input type="text" id="firstname2" name="firstname2" value="@task2.firstName"></td>
+                        <td><input type="text" id="lastname2" name="lastname2" value="@task2.lastName"></td>
                         <td>
-                            @task2.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
+                            <select name="task2" id="task2">
+                                <option name="presentTask" selected>@task2.task</option>
+                                <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
                                 <option value="assignment2">Assignment 2</option>
                                 <option value="assignment3">Assignment 3</option>
                             </select>
                         </td>
                         <td>
-                            @task2.status
-                            <select name="status">
-                                <option value="Defined" selected>Defined</option>
+                            <select name="status2" id="status2">
+                                <option name="presentStatus" selected>@task2.status</option>
+                                <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>
                                 <option value="completed">Completed</option>
                                 <option value="accepted">Accepted</option>
@@ -432,14 +238,14 @@
                     </tr>
                 </table>
                 <br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="Submit">
                 <br><br>
             </form>
         </div>
 
-        <div id="Iteration2" class="panel">
+        <div id="Iteration2" value="Iteration2" class="panel">
 
-            <form action="/">
+            <form name="@task3.iteration" method="post" asp-controller="Home" asp-action="AddTasks">
                 <table style="width:100%">
                     <tr>
                         <th>@Html.DisplayNameFor(model => model.firstName)</th>
@@ -448,21 +254,21 @@
                         <th>@Html.DisplayNameFor(model => model.status)</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="firstname" value="@task3.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task3.lastName"></td>
+                        <td><input type="text" id="firstname3" name="firstname" value="@task3.firstName"></td>
+                        <td><input type="text" id="firstname3" name="lastname" value="@task3.lastName"></td>
                         <td>
-                            @task3.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
+                            <select name="task" id="task3">
+                                <option name="presentTask" selected>@task3.task</option>
+                                <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
                                 <option value="assignment2">Assignment 2</option>
-                                <option value="assignment3">Assignment 3 </option>
+                                <option value="assignment3">Assignment 3</option>
                             </select>
                         </td>
                         <td>
-                            @task3.status
-                            <select name="status">
-                                <option value="Defined" selected>Defineds</option>
+                            <select name="status" id="status3">
+                                <option name="presentStatus" selected>@task3.status</option>
+                                <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>
                                 <option value="completed">Completed</option>
                                 <option value="accepted">Accepted</option>
@@ -470,21 +276,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="firstname" value="@task4.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task4.lastName"></td>
+                        <td><input type="text" id="firstname4" name="firstname" value="@task4.firstName"></td>
+                        <td><input type="text" id="firstname4" name="lastname" value="@task4.lastName"></td>
                         <td>
-                            @task4.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
+                            <select name="task" id="task4">
+                                <option name="presentTask" selected>@task4.task</option>
+                                <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
                                 <option value="assignment2">Assignment 2</option>
                                 <option value="assignment3">Assignment 3</option>
                             </select>
                         </td>
                         <td>
-                            @task4.status
-                            <select name="status">
-                                <option value="Defined" selected>Defined</option>
+                            <select name="status" id="status4">
+                                <option name="presentStatus" selected>@task4.status</option>
+                                <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>
                                 <option value="completed">Completed</option>
                                 <option value="accepted">Accepted</option>
@@ -493,77 +299,15 @@
                     </tr>
                 </table>
                 <br>
-                <input type="submit" value="Submit">
-                <br><br>
-            </form>
-
-        </div>
-
-        <div id="Iteration3" class="panel">
-
-            <form action="/">
-                <table style="width:100%">
-                    <tr>
-                        <th>@Html.DisplayNameFor(model => model.firstName)</th>
-                        <th>@Html.DisplayNameFor(model => model.lastName)</th>
-                        <th>@Html.DisplayNameFor(model => model.task)</th>
-                        <th>@Html.DisplayNameFor(model => model.status)</th>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="firstname" value="@task5.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task5.lastName"></td>
-                        <td>
-                            @task5.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
-                                <option value="assignment1">Assignment 1</option>
-                                <option value="assignment2">Assignment 2</option>
-                                <option value="assignment3">Assignment 3 </option>
-                            </select>
-                        </td>
-                        <td>
-                            @task5.status
-                            <select name="status">
-                                <option value="Defined" selected>Defineds</option>
-                                <option value="inProgress">In Progress</option>
-                                <option value="completed">Completed</option>
-                                <option value="accepted">Accepted</option>
-                            </select>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><input type="text" name="firstname" value="@task6.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task6.lastName"></td>
-                        <td>
-                            @task6.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
-                                <option value="assignment1">Assignment 1</option>
-                                <option value="assignment2">Assignment 2</option>
-                                <option value="assignment3">Assignment 3</option>
-                            </select>
-                        </td>
-                        <td>
-                            @task6.status
-                            <select name="status">
-                                <option value="Defined" selected>Defined</option>
-                                <option value="inProgress">In Progress</option>
-                                <option value="completed">Completed</option>
-                                <option value="accepted">Accepted</option>
-                            </select>
-                        </td>
-                    </tr>
-                </table>
-                <br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="Submit">
                 <br><br>
             </form>
 
         </div>
 
-        <div id="Iteration4" class="panel">
+        <div id="Iteration3" value="Iteration3" class="panel">
 
-            <form action="/">
+            <form name="@task5.iteration" method="post" asp-controller="Home" asp-action="AddTasks">
                 <table style="width:100%">
                     <tr>
                         <th>@Html.DisplayNameFor(model => model.firstName)</th>
@@ -572,21 +316,21 @@
                         <th>@Html.DisplayNameFor(model => model.status)</th>
                     </tr>
                     <tr>
-                        <td><input type="text" name="firstname" value="@task7.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task7.lastName"></td>
+                        <td><input type="text" id="firstname5" name="firstname" value="@task5.firstName"></td>
+                        <td><input type="text" id="firstname5" name="lastname" value="@task5.lastName"></td>
                         <td>
-                            @task7.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
+                            <select name="task" id="task5">
+                                <option name="presentTask" selected>@task5.task</option>
+                                <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
                                 <option value="assignment2">Assignment 2</option>
-                                <option value="assignment3">Assignment 3 </option>
+                                <option value="assignment3">Assignment 3</option>
                             </select>
                         </td>
                         <td>
-                            @task7.status
-                            <select name="status">
-                                <option value="Defined" selected>Defineds</option>
+                            <select name="status" id="status5">
+                                <option name="presentStatus" selected>@task5.status</option>
+                                <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>
                                 <option value="completed">Completed</option>
                                 <option value="accepted">Accepted</option>
@@ -594,21 +338,21 @@
                         </td>
                     </tr>
                     <tr>
-                        <td><input type="text" name="firstname" value="@task8.firstName"></td>
-                        <td><input type="text" name="lastname" value="@task8.lastName"></td>
+                        <td><input type="text" id="firstname6" name="firstname" value="@task6.firstName"></td>
+                        <td><input type="text" id="firstname6" name="lastname" value="@task6.lastName"></td>
                         <td>
-                            @task8.task
-                            <select name="task">
-                                <option value="Research" selected>Research</option>
+                            <select name="task" id="task6">
+                                <option name="presentTask" selected>@task6.task</option>
+                                <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
                                 <option value="assignment2">Assignment 2</option>
                                 <option value="assignment3">Assignment 3</option>
                             </select>
                         </td>
                         <td>
-                            @task8.status
-                            <select name="status">
-                                <option value="Defined" selected>Defined</option>
+                            <select name="status" id="status6">
+                                <option name="presentStatus" selected>@task6.status</option>
+                                <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>
                                 <option value="completed">Completed</option>
                                 <option value="accepted">Accepted</option>
@@ -617,7 +361,69 @@
                     </tr>
                 </table>
                 <br>
-                <input type="submit" value="Submit">
+                <input type="submit" value="Submit" class="Submit">
+                <br><br>
+            </form>
+
+        </div>
+
+        <div id="Iteration4" value="Iteration4" class="panel">
+
+            <form name="@task7.iteration" method="post" asp-controller="Home" asp-action="AddTasks">
+                <table style="width:100%">
+                    <tr>
+                        <th>@Html.DisplayNameFor(model => model.firstName)</th>
+                        <th>@Html.DisplayNameFor(model => model.lastName)</th>
+                        <th>@Html.DisplayNameFor(model => model.task)</th>
+                        <th>@Html.DisplayNameFor(model => model.status)</th>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="firstname7" name="firstname" value="@task7.firstName"></td>
+                        <td><input type="text" id="firstname7" name="lastname" value="@task7.lastName"></td>
+                        <td>
+                            <select name="task" id="task7">
+                                <option name="presentTask" selected>@task7.task</option>
+                                <option value="Research">Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status" id="status7">
+                                <option name="presentStatus" selected>@task7.status</option>
+                                <option value="Defined">Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="firstname8" name="firstname" value="@task8.firstName"></td>
+                        <td><input type="text" id="firstname8" name="lastname" value="@task8.lastName"></td>
+                        <td>
+                            <select name="task" id="task8">
+                                <option name="presentTask" selected>@task8.task</option>
+                                <option value="Research">Research</option>
+                                <option value="assignment1">Assignment 1</option>
+                                <option value="assignment2">Assignment 2</option>
+                                <option value="assignment3">Assignment 3</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select name="status" id="status8">
+                                <option name="presentStatus" selected>@task8.status</option>
+                                <option value="Defined">Defined</option>
+                                <option value="inProgress">In Progress</option>
+                                <option value="completed">Completed</option>
+                                <option value="accepted">Accepted</option>
+                            </select>
+                        </td>
+                    </tr>
+                </table>
+                <br>
+                <input type="submit" value="Submit" class="Submit">
                 <br><br>
             </form>
 
