@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using assignment.Models;
+using assignment.Business;
 
 namespace assignment.Controllers
 {
@@ -41,12 +42,23 @@ namespace assignment.Controllers
             return View();
         }
 
-        public IActionResult SaveInfo()
+        public IActionResult TasksDisplay()
         {
-            //ViewData["TaskMessage"] = "Manage Tasks in this page.";
-            Console.WriteLine("This is a test");
+            var displayTasks = TaskService.GetIndividualTasks();
+
+            ViewBag.Task1 = displayTasks[0];
+            ViewBag.Task2 = displayTasks[1];
+            ViewBag.Task3 = displayTasks[2];
+            ViewBag.Task4 = displayTasks[3];
+            ViewBag.Task5 = displayTasks[4];
+            ViewBag.Task6 = displayTasks[5];
+            ViewBag.Task7 = displayTasks[6];
+            ViewBag.Task8 = displayTasks[7];
+
+
             return View();
         }
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
