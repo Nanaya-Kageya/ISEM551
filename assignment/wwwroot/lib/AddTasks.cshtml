@@ -8,14 +8,14 @@
 <h3>@ViewData["TaskMessage"]</h3>
 
 @{
-    assignment.Models.TaskVO task1 = (assignment.Models.TaskVO) ViewData["Task1"];
-    assignment.Models.TaskVO task2 = (assignment.Models.TaskVO) ViewData["Task2"];
-    assignment.Models.TaskVO task3 = (assignment.Models.TaskVO) ViewData["Task3"];
-    assignment.Models.TaskVO task4 = (assignment.Models.TaskVO) ViewData["Task4"];
-    assignment.Models.TaskVO task5 = (assignment.Models.TaskVO) ViewData["Task5"];
-    assignment.Models.TaskVO task6 = (assignment.Models.TaskVO) ViewData["Task6"];
-    assignment.Models.TaskVO task7 = (assignment.Models.TaskVO) ViewData["Task7"];
-    assignment.Models.TaskVO task8 = (assignment.Models.TaskVO) ViewData["Task8"];
+    assignment.Models.TaskVO task1 = (assignment.Models.TaskVO)ViewData["Task1"];
+    assignment.Models.TaskVO task2 = (assignment.Models.TaskVO)ViewData["Task2"];
+    assignment.Models.TaskVO task3 = (assignment.Models.TaskVO)ViewData["Task3"];
+    assignment.Models.TaskVO task4 = (assignment.Models.TaskVO)ViewData["Task4"];
+    assignment.Models.TaskVO task5 = (assignment.Models.TaskVO)ViewData["Task5"];
+    assignment.Models.TaskVO task6 = (assignment.Models.TaskVO)ViewData["Task6"];
+    assignment.Models.TaskVO task7 = (assignment.Models.TaskVO)ViewData["Task7"];
+    assignment.Models.TaskVO task8 = (assignment.Models.TaskVO)ViewData["Task8"];
 }
 
 @model IEnumerable<assignment.Models.TaskVO>
@@ -86,7 +86,6 @@
     </style>
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
-    <script src="~/lib/jquery-editableSelect/jquery.editable.select.js"></script>
 
 
 
@@ -115,12 +114,7 @@
                 }
             });
 
-            @*$('.selectOptions').editableSelect({ effects: 'slide' });*@
-            $('select').editableSelect({ effects: 'slide' });
-
         });
-
-
 
         @*function submitTasks() {
             $(".Submit").click(function () {
@@ -197,7 +191,7 @@
                         <td><input type="text" id="firstname1" name="firstname1" value="@task1.firstName"></td>
                         <td><input type="text" id="lastname1" name="lastname1" value="@task1.lastName"></td>
                         <td>
-                            <select name="task1" id="task1" class="selectOptions">
+                            <select name="task1" id="task1">
                                 <option name="presentTask" selected>@task1.task</option>
                                 <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
@@ -206,7 +200,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="status1" id="status1" class="selectOptions">
+                            <select name="status1" id="status1">
                                 <option name="presentStatus" selected>@task1.status</option>
                                 <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>

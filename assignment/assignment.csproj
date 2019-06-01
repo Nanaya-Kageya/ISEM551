@@ -11,10 +11,20 @@
     <PackageReference Include="System.Data.SqlClient" Version="4.6.1" />
     <PackageReference Include="System.Data.Common" Version="4.3.0" />
     <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="jQuery" Version="3.4.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Folder Include="Business\" />
     <Folder Include="DataAcess\" />
+    <Folder Include="wwwroot\lib\jquery-editableSelect\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Remove="wwwroot\lib\AddTasks.cshtml" />
+    <Content Remove="wwwroot\lib\jquery-editableSelect\editableSelect.jquery.json" />
+    <Content Remove="wwwroot\lib\jquery-editableSelect\jquery.editable.select.js" />
+    <Content Remove="wwwroot\lib\jquery-editableSelect\jquery.editable.select.min.js" />
+    <Content Remove="wwwroot\lib\jquery-editableSelect\README.md" />
+    <Content Remove="wwwroot\lib\jquery-editableSelect\usage.html" />
   </ItemGroup>
 </Project>

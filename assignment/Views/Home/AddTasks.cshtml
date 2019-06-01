@@ -86,6 +86,7 @@
     </style>
 
     <script src="~/lib/jquery/dist/jquery.js"></script>
+    <script src="~/lib/jquery-editableSelect/jquery.editable.select.js"></script>
 
 
 
@@ -114,7 +115,12 @@
                 }
             });
 
+            @*$('.selectOptions').editableSelect({ effects: 'slide' });*@
+            $('select').editableSelect({ effects: 'slide' });
+
         });
+
+
 
         @*function submitTasks() {
             $(".Submit").click(function () {
@@ -191,7 +197,7 @@
                         <td><input type="text" id="firstname1" name="firstname1" value="@task1.firstName"></td>
                         <td><input type="text" id="lastname1" name="lastname1" value="@task1.lastName"></td>
                         <td>
-                            <select name="task1" id="task1">
+                            <select name="task1" id="task1" class="selectOptions">
                                 <option name="presentTask" selected>@task1.task</option>
                                 <option value="Research">Research</option>
                                 <option value="assignment1">Assignment 1</option>
@@ -200,7 +206,7 @@
                             </select>
                         </td>
                         <td>
-                            <select name="status1" id="status1">
+                            <select name="status1" id="status1" class="selectOptions">
                                 <option name="presentStatus" selected>@task1.status</option>
                                 <option value="Defined">Defined</option>
                                 <option value="inProgress">In Progress</option>
