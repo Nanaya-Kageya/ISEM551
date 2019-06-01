@@ -9,10 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\Da
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{BDFFAEF4-62CF-4425-8BA0-91FEF22F288F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webApp", "webApp\webApp.csproj", "{D8517459-2D25-4C93-A4CC-ADA0771E14DC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "myWebService", "myWebService\myWebService.csproj", "{B33C9ADD-1A66-4344-8576-718051B6495C}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,13 +31,5 @@ Global
 		{BDFFAEF4-62CF-4425-8BA0-91FEF22F288F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDFFAEF4-62CF-4425-8BA0-91FEF22F288F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDFFAEF4-62CF-4425-8BA0-91FEF22F288F}.Release|Any CPU.Build.0 = Release|Any CPU
-		{D8517459-2D25-4C93-A4CC-ADA0771E14DC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D8517459-2D25-4C93-A4CC-ADA0771E14DC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D8517459-2D25-4C93-A4CC-ADA0771E14DC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D8517459-2D25-4C93-A4CC-ADA0771E14DC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B33C9ADD-1A66-4344-8576-718051B6495C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B33C9ADD-1A66-4344-8576-718051B6495C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B33C9ADD-1A66-4344-8576-718051B6495C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B33C9ADD-1A66-4344-8576-718051B6495C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
